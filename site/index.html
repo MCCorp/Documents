@@ -73,38 +73,34 @@
 <p><code>Graph API for third party</code></p>
 <h2 id="api-define">API Define</h2>
 <ul>
-<li><code>Định dạng kết quả trả về</code>: JSON</li>
-<li><code>Phương thức</code>: POST</li>
-<li><code>Tham số</code>: </li>
+<li><code>Result</code>: JSON</li>
+<li><code>Method</code>: POST</li>
+<li><code>Params</code>: </li>
 </ul>
 <pre><code class="javascript">{
-    //Tham số bắt buộc với các hàm lấy dữ liệu
-    access_key: STRING thời gian hiện tại dạng số: &quot;1439190122831&quot;
-    client_id: STRING ID của ứng dụng
-    access_code: STRING được tính theo công thức access_code = sha256 (secret key + access_key)
+    //Require params
+    access_key: STRING timestamp: 1439190122831
+    client_id: STRING ID APP
+    access_code: STRING access_code = sha256 (secret key + access_key)
+    c_location: STRING Country code eg: US, GB.... default &quot;US&quot;    
 
-    //Tham số tùy chọn
-    c_location: STRING US, GB, VN.... mặc định &quot;US&quot;
-    c_date: STRING thời gian hiện tại với định dạng Y-m-d H:i:s
-    c_limit: INTEGER mặc định config.limit của Server
-    c_offset: INTEGER mặc định 0
+    //Option param        
+    c_date: STRING datetime now with format Y-m-d H:i:s, Default value equal server datetime
+    c_limit: INTEGER default API Config
+    c_offset: INTEGER default API Config
 }
 </code></pre>
 
 <ul>
-<li><code>Basic API URL</code>: URL_API/v{VERSION/{NAME_OF_METHOD}/ with {VERSION} = Integer, {NAME_OF_METHOD} = String. Eg: https://www.api.xxx.com/v1/getTopCoupons/</li>
-<li><code>Cấu trúc</code>:</li>
+<li><code>Basic API URL</code>: URL_API/v{VERSION/{NAME_OF_METHOD}/ with {VERSION} = Integer, {NAME_OF_METHOD} = String. </li>
+</ul>
+<p><code>Eg: https://www.api.xxx.com/v1/getTopCoupons/</code></p>
+<ul>
+<li><code>Result Structure</code>:</li>
 </ul>
 <pre><code class="javascript">{
     code: 0,
-    msg: 'Main message',
-    messages : {
-        message_1 : '....',
-        message_2 : '....',
-        message_3 : '....',
-
-        message_n : '....',
-    },
+    msg: 'Main message',   
     data: {
         key_1 : 'value 1',
         key_2 : {
@@ -120,12 +116,11 @@
 </code></pre>
 
 <ul>
-<li><code>Định nghĩa kết quả trả về</code>:<ul>
-<li>code: Code != 0 tức là có lỗi trả về</li>
-<li>msg: Thông báo trả về nếu có lỗi, tức là code != 0 ở trên</li>
-<li>messages: Thông báo phụ nếu có nhiều lỗi</li>
-<li>data: cấu trúc linh động tùy theo mỗi {NAME_OF_METHOD} mà định dạng khác nhau</li>
-<li>data_error: Dữ liệu phục vụ debug cho API khi có lỗi trong TRY CATCH (Exception) xảy ra</li>
+<li><code>Define Result Structure</code>:<ul>
+<li>code: Code = 0: Success, Code &lt;&gt; 0: Error</li>
+<li>msg: Message</li>
+<li>data: Result data</li>
+<li>data_error: Result for dev</li>
 </ul>
 </li>
 </ul>
@@ -135,7 +130,7 @@
 <h2 id="coupons">Coupons</h2>
 <h3 id="get-top-coupons">Get top coupons</h3>
 <pre><code>URL: http://localhost:3002/v1/coupons/getTopCoupons/
-Tham số tùy chọn:
+Params options:
     c_limit
     c_offset
 </code></pre>

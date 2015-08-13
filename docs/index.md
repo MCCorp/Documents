@@ -3,36 +3,32 @@
 `Graph API for third party`
 
 ##API Define
-* `Định dạng kết quả trả về`: JSON
-* `Phương thức`: POST
-* `Tham số`: 
+* `Result`: JSON
+* `Method`: POST
+* `Params`: 
 ```javascript
 {
-    //Tham số bắt buộc với các hàm lấy dữ liệu
-    access_key: STRING thời gian hiện tại dạng số: "1439190122831"
-    client_id: STRING ID của ứng dụng
-    access_code: STRING được tính theo công thức access_code = sha256 (secret key + access_key)
-      
-    //Tham số tùy chọn
-    c_location: STRING US, GB, VN.... mặc định "US"
-    c_date: STRING thời gian hiện tại với định dạng Y-m-d H:i:s
-    c_limit: INTEGER mặc định config.limit của Server
-    c_offset: INTEGER mặc định 0
+    //Require params
+    access_key: STRING timestamp: 1439190122831
+    client_id: STRING ID APP
+    access_code: STRING access_code = sha256 (secret key + access_key)
+    c_location: STRING Country code eg: US, GB.... default "US"    
+          
+    //Option param        
+    c_date: STRING datetime now with format Y-m-d H:i:s, Default value equal server datetime
+    c_limit: INTEGER default API Config
+    c_offset: INTEGER default API Config
 }
 ```
-* `Basic API URL`: URL_API/v{VERSION/{NAME_OF_METHOD}/ with {VERSION} = Integer, {NAME_OF_METHOD} = String. Eg: https://www.api.xxx.com/v1/getTopCoupons/
-* `Cấu trúc`:
+* `Basic API URL`: URL_API/v{VERSION/{NAME_OF_METHOD}/ with {VERSION} = Integer, {NAME_OF_METHOD} = String. 
+
+`Eg: https://www.api.xxx.com/v1/getTopCoupons/`
+
+* `Result Structure`:
 ```javascript
 {
     code: 0,
-    msg: 'Main message',
-    messages : {
-        message_1 : '....',
-        message_2 : '....',
-        message_3 : '....',
-        
-        message_n : '....',
-    },
+    msg: 'Main message',   
     data: {
         key_1 : 'value 1',
         key_2 : {
@@ -46,12 +42,11 @@
     data_error : ....
 }
 ```
-* `Định nghĩa kết quả trả về`:
-    * code: Code != 0 tức là có lỗi trả về
-    * msg: Thông báo trả về nếu có lỗi, tức là code != 0 ở trên
-    * messages: Thông báo phụ nếu có nhiều lỗi
-    * data: cấu trúc linh động tùy theo mỗi {NAME_OF_METHOD} mà định dạng khác nhau
-    * data_error: Dữ liệu phục vụ debug cho API khi có lỗi trong TRY CATCH (Exception) xảy ra
+* `Define Result Structure`:
+    * code: Code = 0: Success, Code <> 0: Error
+    * msg: Message
+    * data: Result data
+    * data_error: Result for dev
 
 ##Oauth
 
@@ -65,7 +60,7 @@
 
 ```
 URL: http://localhost:3002/v1/coupons/getTopCoupons/
-Tham số tùy chọn:
+Params options:
     c_limit
     c_offset
 ```
