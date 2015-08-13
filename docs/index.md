@@ -64,3 +64,15 @@ Params options:
     c_limit
     c_offset
 ```
+
+**Example**
+```
+URL: http://mobileapp.mccorp.co.com/v1/coupons/getTopCoupons/
+Params = {
+    access_key: '1439190122831', 
+    client_id: '55a2af2a-b380-451b-a585-612a61af48f5',
+    access_code: '5f50d27d603a0c09e2c53c35864ddcb42ac735c6d4fa369157a6f95e6380c7e8', 
+    c_limit: 10,
+    c_offset: 0
+}
+```
