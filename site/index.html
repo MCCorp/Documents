@@ -62,7 +62,7 @@
         
             <li><a href="#stores">Stores</a></li>
         
-            <li><a href="#coupons">Coupons</a></li>
+            <li><a href="#home-app">Home APP</a></li>
         
     
     </ul>
@@ -127,12 +127,64 @@
 <h2 id="oauth">Oauth</h2>
 <h2 id="users">Users</h2>
 <h2 id="stores">Stores</h2>
-<h2 id="coupons">Coupons</h2>
-<h3 id="get-top-coupons">Get top coupons</h3>
-<pre><code>URL: http://localhost:3002/v1/coupons/getTopCoupons/
+<h2 id="home-app">Home APP</h2>
+<h3 id="top-coupons-of-best-store">Top coupons of best store</h3>
+<pre><code>URL: http://mobileapp.mccorp.co.com/v1/coupons/getTopCoupons/
 Params options:
+    c_location
+    c_date
     c_limit
     c_offset
+</code></pre>
+
+<p><strong>Example</strong></p>
+<pre><code>URL: http://mobileapp.mccorp.co.com/v1/coupons/getTopCoupons/
+Params = {
+    access_key: '1439190122831', 
+    client_id: '55a2af2a-b380-451b-a585-612a61af48f5',
+    access_code: '5f50d27d603a0c09e2c53c35864ddcb42ac735c6d4fa369157a6f95e6380c7e8',
+    c_location: 'US'
+    c_date: '2015-08-15 00:00:00'
+    c_limit: 10,
+    c_offset: 0
+}
+
+Success Result:
+{
+    code: 0,
+    data: [Array]
+}
+</code></pre>
+
+<h3 id="the-shopdaily-deals">The shop/Daily deals</h3>
+<pre><code>URL: http://mobileapp.mccorp.co.com/v1/coupons/getTopCoupons/
+Params options:
+    c_location
+    c_date
+    c_limit
+    c_offset
+</code></pre>
+
+<p><strong>Example</strong></p>
+<pre><code>URL: http://mobileapp.mccorp.co.com/v1/deals/dailyDeals/
+Params = {
+    access_key: '1439190122831', 
+    client_id: '55a2af2a-b380-451b-a585-612a61af48f5',
+    access_code: '5f50d27d603a0c09e2c53c35864ddcb42ac735c6d4fa369157a6f95e6380c7e8',
+    c_location: 'US'
+    c_date: '2015-08-15 00:00:00'
+    c_limit: 10,
+    c_offset: 0
+}
+
+Success Result:
+{
+    code: 0,
+    data: {
+        deals: [Array],
+        totals: [Integer]
+    }
+}
 </code></pre>
 
 </div>

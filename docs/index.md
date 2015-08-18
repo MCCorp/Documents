@@ -54,13 +54,15 @@
 
 ##Stores
 
-##Coupons
+##Home APP
 
-###Get top coupons
+###Top coupons of best store
 
 ```
-URL: http://localhost:3002/v1/coupons/getTopCoupons/
+URL: http://mobileapp.mccorp.co.com/v1/coupons/getTopCoupons/
 Params options:
+    c_location
+    c_date
     c_limit
     c_offset
 ```
@@ -71,8 +73,50 @@ URL: http://mobileapp.mccorp.co.com/v1/coupons/getTopCoupons/
 Params = {
     access_key: '1439190122831', 
     client_id: '55a2af2a-b380-451b-a585-612a61af48f5',
-    access_code: '5f50d27d603a0c09e2c53c35864ddcb42ac735c6d4fa369157a6f95e6380c7e8', 
+    access_code: '5f50d27d603a0c09e2c53c35864ddcb42ac735c6d4fa369157a6f95e6380c7e8',
+    c_location: 'US'
+    c_date: '2015-08-15 00:00:00'
     c_limit: 10,
     c_offset: 0
+}
+
+Success Result:
+{
+    code: 0,
+    data: [Array]
+}
+```
+
+###The shop/Daily deals
+
+```
+URL: http://mobileapp.mccorp.co.com/v1/coupons/getTopCoupons/
+Params options:
+    c_location
+    c_date
+    c_limit
+    c_offset
+```
+
+**Example**
+```
+URL: http://mobileapp.mccorp.co.com/v1/deals/dailyDeals/
+Params = {
+    access_key: '1439190122831', 
+    client_id: '55a2af2a-b380-451b-a585-612a61af48f5',
+    access_code: '5f50d27d603a0c09e2c53c35864ddcb42ac735c6d4fa369157a6f95e6380c7e8',
+    c_location: 'US'
+    c_date: '2015-08-15 00:00:00'
+    c_limit: 10,
+    c_offset: 0
+}
+
+Success Result:
+{
+    code: 0,
+    data: {
+        deals: [Array],
+        totals: [Integer]
+    }
 }
 ```
