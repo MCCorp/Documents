@@ -3,6 +3,8 @@
 `Graph API for third party`
 
 ##API Define
+* `URL DEV` : http://mobileapp.mccorp.co.com/
+* `URL PRO` : Send later when mobile app completed
 * `Result`: JSON
 * `Method`: POST
 * `Version`: v1
@@ -21,11 +23,9 @@
     c_offset: {INTEGER} default API Config - SQL Offset
 }
 ```
-* `Basic API URL`: URL_API/v{VERSION/{NAME_OF_METHOD}/ with {VERSION} = Integer, {NAME_OF_METHOD} = String. 
-
-**For DEV:** Eg: http://mobileapp.mccorp.co.com/v1/getTopCoupons/
-
-**For PRO:** Send later
+* `Basic API URL`: URL_API/v{VERSION/{NAME_OF_METHOD}/ with {VERSION} = Integer, {NAME_OF_METHOD} = String.
+ 
+Example: http://mobileapp.mccorp.co.com/v1/getTopCoupons/
 
 * `Result Structure`:
 ```javascript
@@ -76,10 +76,9 @@ Success Result:
         userId: "55156ec8-3f48-45c0-a503-6bb761af48f5",
         fullName: "Demo Full Name",
         email: "demo@gmail.com",
-        avatar: "https://s3-us-west-2.amazonaws.com/dev.mostcoupon.com/55156ec8-3f48-45c0-a503-6bb761af48f5-avatar",
-        lastLogin: "2015-08-05T12:51:06.000Z",
-        expires_in: 1440142705017,
-        accessToken: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJleHBpcmVzX2luIjoxNDQwMTQyNzA1MDE3LCJ1c2VySWQiOiI1NTE1NmVjOC0zZjQ4LTQ1YzAtYTUwMy02YmI3NjFhZjQ4ZjUiLCJlbWFpbCI6InB0bGV2YW5AZ21haWwuY29tIn0.5XZYqlVxLnfzSVPBqHy6opNtEAihQSjodLD9TZM1tI0Cfok9BP9f8ToeG5c0JoL-uMQzVNqNaucGdr4K4PZ7sg"
+        avatar: "https://s3-us-west-2.amazonaws.com/dev.mostcoupon.com/55156ec8-3f48-45c0-a503-6bb761af48f5-avatar",                
+        accessToken: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJleHBpcmVzX2luIjoxNDQwMTQyNzA1MDE3LCJ1c2VySWQiOiI1NTE1NmVjOC0zZjQ4LTQ1YzAtYTUwMy02YmI3NjFhZjQ4ZjUiLCJlbWFpbCI6InB0bGV2YW5AZ21haWwuY29tIn0.5XZYqlVxLnfzSVPBqHy6opNtEAihQSjodLD9TZM1tI0Cfok9BP9f8ToeG5c0JoL-uMQzVNqNaucGdr4K4PZ7sg",
+        expiresIn: 1440142705017
     }
 }
 ```
