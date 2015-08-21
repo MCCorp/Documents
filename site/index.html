@@ -129,13 +129,35 @@ Success result:
 }
 </code></pre>
 
+<p><strong>Example</strong></p>
+<pre><code>URL: http://mobileapp.mccorp.co.com/v1/users/login/
+Params = {
+    client_secret: 'CLIENT_SECRET', 
+    client_id: 'CLIENT_ID',    
+    email: 'demo@gmail.com',
+    password: 'demo_password'    
+}
+
+Success Result:
+{
+    code: 0,
+    data: {
+        userId: &quot;55156ec8-3f48-45c0-a503-6bb761af48f5&quot;,
+        fullName: &quot;Demo Full Name&quot;,
+        email: &quot;demo@gmail.com&quot;,
+        avatar: &quot;https://s3-us-west-2.amazonaws.com/dev.mostcoupon.com/55156ec8-3f48-45c0-a503-6bb761af48f5-avatar&quot;,
+        lastLogin: &quot;2015-08-05T12:51:06.000Z&quot;,
+        expires_in: 1440142705017,
+        accessToken: &quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJleHBpcmVzX2luIjoxNDQwMTQyNzA1MDE3LCJ1c2VySWQiOiI1NTE1NmVjOC0zZjQ4LTQ1YzAtYTUwMy02YmI3NjFhZjQ4ZjUiLCJlbWFpbCI6InB0bGV2YW5AZ21haWwuY29tIn0.5XZYqlVxLnfzSVPBqHy6opNtEAihQSjodLD9TZM1tI0Cfok9BP9f8ToeG5c0JoL-uMQzVNqNaucGdr4K4PZ7sg&quot;
+    }
+}
+</code></pre>
+
 <h2 id="stores">Stores</h2>
 <h2 id="home-app">Home APP</h2>
 <h3 id="top-coupons-of-best-store">Top coupons of best store</h3>
 <pre><code>URL: http://mobileapp.mccorp.co.com/v1/coupons/getTopCoupons/
-Params options:
-    c_location
-    c_date
+Params options:    
     c_limit
     c_offset
 </code></pre>

@@ -59,6 +59,31 @@ Success result:
 }
 ```
 
+**Example**
+```
+URL: http://mobileapp.mccorp.co.com/v1/users/login/
+Params = {
+    client_secret: 'CLIENT_SECRET', 
+    client_id: 'CLIENT_ID',    
+    email: 'demo@gmail.com',
+    password: 'demo_password'    
+}
+
+Success Result:
+{
+    code: 0,
+    data: {
+        userId: "55156ec8-3f48-45c0-a503-6bb761af48f5",
+        fullName: "Demo Full Name",
+        email: "demo@gmail.com",
+        avatar: "https://s3-us-west-2.amazonaws.com/dev.mostcoupon.com/55156ec8-3f48-45c0-a503-6bb761af48f5-avatar",
+        lastLogin: "2015-08-05T12:51:06.000Z",
+        expires_in: 1440142705017,
+        accessToken: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJleHBpcmVzX2luIjoxNDQwMTQyNzA1MDE3LCJ1c2VySWQiOiI1NTE1NmVjOC0zZjQ4LTQ1YzAtYTUwMy02YmI3NjFhZjQ4ZjUiLCJlbWFpbCI6InB0bGV2YW5AZ21haWwuY29tIn0.5XZYqlVxLnfzSVPBqHy6opNtEAihQSjodLD9TZM1tI0Cfok9BP9f8ToeG5c0JoL-uMQzVNqNaucGdr4K4PZ7sg"
+    }
+}
+```
+
 ##Stores
 
 ##Home APP
@@ -67,9 +92,7 @@ Success result:
 
 ```
 URL: http://mobileapp.mccorp.co.com/v1/coupons/getTopCoupons/
-Params options:
-    c_location
-    c_date
+Params options:    
     c_limit
     c_offset
 ```
